@@ -42,7 +42,7 @@ class _CalendarExampleState extends State<CalendarExample> {
         children: [
           SizedBox(
             height: 50,
-            child: Row(
+            child: Wrap(
               children: [
                 TextButton(
                   style: TextButton.styleFrom(
@@ -243,9 +243,12 @@ class _CalendarExampleState extends State<CalendarExample> {
               width: 5,
               color: event.background,
             ),
-            Text(
-              event.name,
-              style: const TextStyle(color: Colors.black),
+            Flexible(
+              child: Text(
+                event.name,
+                style: const TextStyle(color: Colors.black),
+                overflow: TextOverflow.ellipsis,
+              ),
             ),
           ],
         ),
