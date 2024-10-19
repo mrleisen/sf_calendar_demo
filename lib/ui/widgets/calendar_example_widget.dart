@@ -233,79 +233,25 @@ class _CalendarExampleState extends State<CalendarExample> {
 
   Widget _appointmentBuilder(BuildContext context, CalendarAppointmentDetails calendarAppointmentDetails) {
     final CalendarDate event = calendarAppointmentDetails.appointments.first;
-    if(_calendarView == CalendarView.month) {
-      return Card(
-        margin: const EdgeInsets.all(0),
-        color: Colors.white,
-        child: Row(
-          children: [
-            Container(
-              width: 5,
-              color: event.background,
-            ),
-            Flexible(
-              child: Text(
-                event.name,
-                style: const TextStyle(color: Colors.black),
-                overflow: TextOverflow.ellipsis,
-              ),
-            ),
-          ],
-        ),
-      );
-    } else {
-      return Container(
-        height: 50,
-        decoration: BoxDecoration(
-          color: event.background,
-          borderRadius: const BorderRadius.all(Radius.circular(5.0)),
-        ),
-        child: Padding(
-          padding: const EdgeInsets.only(left: 4.0),
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(color: Colors.white),
-              borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(5.0),
-                bottomLeft: Radius.circular(5.0),
-              ),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 4.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  // widget to display the status
-                  Card(
-                    color: Colors.white,
-                    elevation: 2,
-                    margin: const EdgeInsets.all(0),
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                      child: Text(
-                        _getStatusString(event.status),
-                        style: TextStyle(color: event.background),
-                        overflow: TextOverflow.ellipsis,
-                      ),
-                    ),
-                  ),
-                  // text widget to display the date name
-                  Flexible(
-                    child: Text(
-                      event.name,
-                      style: const TextStyle(color: Colors.black),
-                      overflow: TextOverflow.ellipsis,
-                    ),
-                  ),
-                ],
-              ),
+    return Card(
+      margin: const EdgeInsets.all(0),
+      color: Colors.white,
+      child: Row(
+        children: [
+          Container(
+            width: 5,
+            color: event.background,
+          ),
+          Flexible(
+            child: Text(
+              event.name,
+              style: const TextStyle(color: Colors.black),
+              overflow: TextOverflow.ellipsis,
             ),
           ),
-        ),
-      );
-    }
+        ],
+      ),
+    );
   }
 
   String _getStatusString(CalendarDateStatusEnum status) {

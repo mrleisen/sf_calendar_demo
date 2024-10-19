@@ -27,7 +27,7 @@ class CalendarRepositoryImpl extends CalendarRepository {
       // event the same day
       Event(
         name: 'Wedding',
-        from: DateTime.now().add(const Duration(days: -3, hours: -2)),
+        from: DateTime.now().add(const Duration(days: -3, hours: -1)),
         to: DateTime.now().add(const Duration(days: -3, hours: 1)),
         background: Colors.purple,
         isAllDay: false,
@@ -51,6 +51,26 @@ class CalendarRepositoryImpl extends CalendarRepository {
         status: CalendarDateStatusEnum.cancelled,
         totalHours: 8,
         project: 'Project A',
+      ),
+      // evento today at 10:00
+      Meeting(
+        name: 'Meeting with the boss',
+        from: DateTime.now().add(const Duration(hours: 10)),
+        to: DateTime.now().add(const Duration(hours: 11)),
+        background: Colors.orange,
+        isAllDay: false,
+        status: CalendarDateStatusEnum.pending,
+        attendees: ['Boss', 'Me'],
+      ),
+      // all day event
+      Event(
+        name: 'Conference',
+        from: DateTime(2024, 10, 20, 0, 0),
+        to: DateTime(2024, 10, 23, 23, 59),
+        background: Colors.yellow,
+        isAllDay: true,
+        status: CalendarDateStatusEnum.pending,
+        location: 'Las Vegas',
       ),
     ];
   }
