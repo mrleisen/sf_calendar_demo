@@ -40,84 +40,82 @@ class _CalendarExampleState extends State<CalendarExample> {
       ),
       body: Column(
         children: [
-          SizedBox(
-            height: 50,
-            child: Wrap(
-              children: [
-                TextButton(
-                  style: TextButton.styleFrom(
-                    foregroundColor: _calendarView == CalendarView.month ? Colors.blue : Colors.black,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _calendarView = CalendarView.month;
-                      _calendarController.view = _calendarView;
-                    });
-                  },
-                  child: const Text('Month'),
+          Wrap(
+            alignment: WrapAlignment.center,
+            children: [
+              TextButton(
+                style: TextButton.styleFrom(
+                  foregroundColor: _calendarView == CalendarView.month ? Colors.blue : Colors.black,
                 ),
-                TextButton(
-                  style: TextButton.styleFrom(
-                    foregroundColor: _calendarView == CalendarView.week ? Colors.blue : Colors.black,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _calendarView = CalendarView.week;
-                      _calendarController.view = _calendarView;
-                    });
-                  },
-                  child: const Text('Week'),
+                onPressed: () {
+                  setState(() {
+                    _calendarView = CalendarView.month;
+                    _calendarController.view = _calendarView;
+                  });
+                },
+                child: const Text('Month'),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                  foregroundColor: _calendarView == CalendarView.week ? Colors.blue : Colors.black,
                 ),
-                TextButton(
-                  style: TextButton.styleFrom(
-                    foregroundColor: _calendarView == CalendarView.day ? Colors.blue : Colors.black,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _calendarView = CalendarView.day;
-                      _calendarController.view = _calendarView;
-                    });
-                  },
-                  child: const Text('Day'),
+                onPressed: () {
+                  setState(() {
+                    _calendarView = CalendarView.week;
+                    _calendarController.view = _calendarView;
+                  });
+                },
+                child: const Text('Week'),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                  foregroundColor: _calendarView == CalendarView.day ? Colors.blue : Colors.black,
                 ),
-                TextButton(
-                  style: TextButton.styleFrom(
-                    foregroundColor: _calendarView == CalendarView.timelineMonth ? Colors.blue : Colors.black,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _calendarView = CalendarView.timelineMonth;
-                      _calendarController.view = _calendarView;
-                    });
-                  },
-                  child: const Text('Timeline Month'),
+                onPressed: () {
+                  setState(() {
+                    _calendarView = CalendarView.day;
+                    _calendarController.view = _calendarView;
+                  });
+                },
+                child: const Text('Day'),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                  foregroundColor: _calendarView == CalendarView.timelineMonth ? Colors.blue : Colors.black,
                 ),
-                TextButton(
-                  style: TextButton.styleFrom(
-                    foregroundColor: _calendarView == CalendarView.timelineWeek ? Colors.blue : Colors.black,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _calendarView = CalendarView.timelineWeek;
-                      _calendarController.view = _calendarView;
-                    });
-                  },
-                  child: const Text('Timeline Week'),
+                onPressed: () {
+                  setState(() {
+                    _calendarView = CalendarView.timelineMonth;
+                    _calendarController.view = _calendarView;
+                  });
+                },
+                child: const Text('Timeline Month'),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                  foregroundColor: _calendarView == CalendarView.timelineWeek ? Colors.blue : Colors.black,
                 ),
-                TextButton(
-                  style: TextButton.styleFrom(
-                    foregroundColor: _calendarView == CalendarView.day ? Colors.blue : Colors.black,
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      _calendarView = CalendarView.timelineDay;
-                      _calendarController.view = _calendarView;
-                    });
-                  },
-                  child: const Text('Timeline Day'),
+                onPressed: () {
+                  setState(() {
+                    _calendarView = CalendarView.timelineWeek;
+                    _calendarController.view = _calendarView;
+                  });
+                },
+                child: const Text('Timeline Week'),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                  foregroundColor: _calendarView == CalendarView.day ? Colors.blue : Colors.black,
                 ),
-              ],
-            ),
+                onPressed: () {
+                  setState(() {
+                    _calendarView = CalendarView.timelineDay;
+                    _calendarController.view = _calendarView;
+                  });
+                },
+                child: const Text('Timeline Day'),
+              ),
+            ],
           ),
           Expanded(
             child: SfCalendar(
